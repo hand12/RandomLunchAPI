@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: random_lunch_api_production
-  username: myapp
-  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  database: heroku_53baa7bfdabc87e
+  username: bb3dd56a5d9077
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: localhost
