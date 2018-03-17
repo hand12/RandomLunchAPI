@@ -10,6 +10,11 @@ class GroupsController < ApplicationController
 
   # GET /groups/1
   def show
+    render 'show', formats: 'json', handlers: 'jbuilder'
+  end
+
+  def result
+    @group = Group.find(params[:group_id])
     members_num_per_group = params[:members_num_per_group].to_i
     group_num = @group.members.length.fdiv(members_num_per_group).ceil
     restaurants = Restaurant.where(id: @group.restaurants.pluck(:id).sample(group_num))
