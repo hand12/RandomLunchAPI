@@ -7,4 +7,10 @@ json.group do |group|
       json.name member.name
     end
   end
+  json.restaurants do
+    json.array! @group.restaurants do |restaurant|
+      json.id restaurant.id
+      json.name restaurant.name
+    end
+  end
 end
